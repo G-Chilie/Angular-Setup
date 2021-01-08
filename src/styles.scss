@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+$custom-typography: mat-typography-config($font-family: "'Open Sans', 'Helvetica Neue', sans-serif",
+  $headline: mat-typography-level(28px, 32px, 600, $letter-spacing: -0.07em),
+  $title: mat-typography-level(18px, 24px, 600, $letter-spacing: -0.06em),
+  $body-1: mat-typography-level(14px, 18px, 400),
+  $body-2: mat-typography-level(14px, 18px, 700),
+  $caption: mat-typography-level(12px, 14px, 400),
+  $button: mat-typography-level(16px, 20px, 400),
+  $input: mat-typography-level(14px, 1.2, 400, $letter-spacing: -0.07em),
+);
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core($custom-typography);
+
